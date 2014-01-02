@@ -1,4 +1,4 @@
-Features: code-breaker submits guess
+Feature: code-breaker submits guess
 
   The code-breaker submits a guess of four members.The game marks the guess with + and - signs.
 
