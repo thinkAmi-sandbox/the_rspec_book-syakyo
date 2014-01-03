@@ -1,8 +1,9 @@
 module Codebreaker
   class Game
     class Marker
-      def initialize(secret)
+      def initialize(secret, guess)
         @secret = secret
+        @guess = guess
       end
 
       def exact_match_count(guess)
@@ -40,7 +41,7 @@ module Codebreaker
     end
 
     def guess(guess)
-      marker = Marker.new(@secret)
+      marker = Marker.new(@secret, guess)
       @output.puts '+'*marker.exact_match_count(guess) + 
                    '-'*marker.number_match_count(guess)
     end
