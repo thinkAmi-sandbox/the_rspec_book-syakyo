@@ -14,7 +14,7 @@ module Codebreaker
 
       def number_match_count
         (0..3).inject(0) do |count, index|
-          count + (number_match?(@guess, index) ? 1 : 0)
+          count + (number_match?(index) ? 1 : 0)
         end
       end
 
@@ -23,7 +23,7 @@ module Codebreaker
         @guess[index] == @secret[index]
       end
 
-      def number_match?(guess, index)
+      def number_match?(index)
         @secret.include?(@guess[index]) && !exact_match?(index)
       end
 
