@@ -17,12 +17,14 @@ module Codebreaker
 
     def total_match_count
       count = 0
-      @guess.map do |n|
-        if @secret.include?(n)
-          @secret.delete_at(@secret.index(n))
+      secret = @secret.split('')
+      @guess.split('').map do |n|
+        if secret.include?(n)
+          secret.delete_at(secret.index(n))
           count += 1
         end
       end
+      count
     end
 
 
