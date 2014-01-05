@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "messages/new.html.erb" do
   it "renders a form to create a message" do
-    assign(:message, double("Message"))
+    assign(:message, mock_model("Message"))
     render
     rendered.should have_selector("form",
       :method => "post",
