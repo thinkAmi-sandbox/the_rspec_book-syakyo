@@ -5,7 +5,7 @@ describe ApplicationHelper do
     context "when the current user has the role" do
       it "displays the content" do
         user = stub('User', :in_role? => true)
-        helper.stub(:content_user).and_return(user)
+        helper.stub(:current_user).and_return(user)
         content = helper.display_for(:existing_role) {"content"}
         content.should == "content"
       end

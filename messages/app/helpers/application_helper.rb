@@ -1,5 +1,5 @@
 module ApplicationHelper
   def display_for(role)
-    yield
+    yield if current_user.in_role?(role)
   end
 end
