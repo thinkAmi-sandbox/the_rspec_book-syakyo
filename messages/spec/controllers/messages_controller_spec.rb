@@ -3,7 +3,10 @@ require 'spec_helper'
 describe MessagesController do
   describe "POST create" do
     it "creates a new message" do
-      Message.should_receive(:new).with("text" => "a quick brown fox")
+      message = mock_model(Message)
+      Message.should_receive(:new).
+        with("text" => "a quick brown fox").
+        and_return(message)
       post :create, :message => { "text" => "a quick brown fox" }
     end
 
