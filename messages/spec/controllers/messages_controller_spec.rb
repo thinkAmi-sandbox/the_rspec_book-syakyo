@@ -15,11 +15,6 @@ describe MessagesController do
       post :create, :message => { "text" => "a quick brown fox" }
     end
 
-    it "save the message" do
-      message.should_receive(:save)
-      post :create
-    end
-
     it "redirects to the Messages index" do
       post :create
       response.should redirect_to(:action => "index")
