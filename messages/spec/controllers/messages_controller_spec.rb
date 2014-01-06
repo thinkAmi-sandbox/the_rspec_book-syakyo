@@ -47,7 +47,7 @@ describe MessagesController do
       it "renders the new template" do
         message.stub(:save).and_return(false)
         post :create
-        response_should render_template("new")
+        response.should render_template("new")
       end
     end
   end
