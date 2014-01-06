@@ -26,7 +26,10 @@ describe MessagesController do
     end
 
     context "when the message saves successfully" do
-      it "sets a flash[:notice] message"
+      it "sets a flash[:notice] message" do
+        post :create
+        flash[:notice].should eq "The message was saved successfully."
+      end
 
       it "redirects to the Message index" do
         post :create
