@@ -33,14 +33,16 @@ describe MessagesController do
     end
 
     context "when the message fails to save" do
-      it "assings @message" do
+      before do
         message.stub(:save).and_return(false)
+      end
+
+      it "assings @message" do
         post :create
         assigns[:message].should eq(message)
       end
 
       it "renders the new template" do
-        message.stub(:save).and_return(false)
         post :create
         response.should render_template("new")
       end
