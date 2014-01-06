@@ -36,5 +36,11 @@ describe MessagesController do
         response.should redirect_to(:action => "index")
       end
     end
+
+    context "when the message fails to save" do
+      it "assings @message"
+
+      it "renders the new template"
+    end
   end
 end
