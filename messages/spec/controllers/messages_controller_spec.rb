@@ -21,6 +21,10 @@ describe MessagesController do
     end
 
     context "when the message saves successfully" do
+      before do
+        message.stub(:save).and_return(true)
+      end
+      
       it "sets a flash[:notice] message" do
         post :create
         flash[:notice].should eq "The message was saved successfully."
