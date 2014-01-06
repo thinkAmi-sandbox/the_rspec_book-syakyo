@@ -7,7 +7,12 @@ describe MessagesController do
       post :create, :message => { "text" => "a quick brown fox" }
     end
 
-    it "save the message"
+    it "save the message" do
+      message = mock_model(Message)
+      Message.stub(:new).and_return(message)
+      message.should_receive(:save)
+      post :create
+    end
 
     it "redirects to the Messages index" do
       post :create
