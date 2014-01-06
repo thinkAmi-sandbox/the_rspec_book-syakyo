@@ -24,5 +24,14 @@ describe MessagesController do
       post :create
       response.should redirect_to(:action => "index")
     end
+
+    context "when the message saves successfully" do
+      it "sets a flash[:notice] message"
+
+      it "redirects to the Message index" do
+        post :create
+        response.should redirect_to(:action => "index")
+      end
+    end
   end
 end
