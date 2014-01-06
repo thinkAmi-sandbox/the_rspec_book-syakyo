@@ -44,7 +44,11 @@ describe MessagesController do
         assigns[:message].should eq(message)
       end
 
-      it "renders the new template"
+      it "renders the new template" do
+        message.stub(:save).and_return(false)
+        post :create
+        response_should render_template("new")
+      end
     end
   end
 end
