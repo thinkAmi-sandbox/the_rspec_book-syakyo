@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe Message do
   before(:each) do
-    @message = Message.new(:title => "foo", :text => "bar")
+    @message = Message.new(
+      :title => "foo", 
+      :text => "bar",
+      :recipient => mock_model("User")
+    )
   end
 
   it "is valid with valid attributes" do
