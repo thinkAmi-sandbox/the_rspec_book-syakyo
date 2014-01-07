@@ -6,7 +6,7 @@ describe Message do
   end
 
   it "is valid with valid attributes" do
-    Message.new(:title => "foo", :text => "bar").should be_valid
+    @message.should be_valid
   end
 
   it "is not valid without a title" do
