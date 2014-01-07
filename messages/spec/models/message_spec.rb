@@ -10,7 +10,10 @@ describe Message do
     message.should_not be_valid
   end
 
-  it "is not valid without text"
+  it "is not valid without text" do
+    message = Message.new :text => nil
+    message.should_not be_valid
+  end
 
   it "is not valid without a recipient"
 end
