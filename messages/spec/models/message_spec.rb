@@ -19,5 +19,8 @@ describe Message do
     @message.should_not be_valid
   end
 
-  it "is not valid without a recipient"
+  it "is not valid without a recipient" do
+    @message.recipient = nil
+    @message.should_not be_valid
+  end
 end
