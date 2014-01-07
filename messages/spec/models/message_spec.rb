@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Message do
+  before(:each) do
+    @message = Message.new(:title => "foo", :text => "bar")
+  end
+
   it "is valid with valid attributes" do
     Message.new(:title => "foo", :text => "bar").should be_valid
   end
