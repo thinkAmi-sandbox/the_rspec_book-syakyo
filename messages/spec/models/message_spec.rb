@@ -5,7 +5,10 @@ describe Message do
     Message.new.should be_valid
   end
 
-  it "is not valid without a title"
+  it "is not valid without a title" do
+    message = Message.new :title => nil
+    message.should_not be_valid
+  end
 
   it "is not valid without text"
 
