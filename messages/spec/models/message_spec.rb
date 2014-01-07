@@ -10,8 +10,8 @@ describe Message do
   end
 
   it "is not valid without a title" do
-    message = Message.new :title => nil
-    message.should_not be_valid
+    @message.title = nil
+    @message.should_not be_valid
   end
 
   it "is not valid without text" do
