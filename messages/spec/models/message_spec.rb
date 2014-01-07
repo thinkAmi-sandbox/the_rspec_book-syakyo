@@ -11,7 +11,7 @@ describe Message do
   end
 
   it "is not valid without text" do
-    message = Message.new :text => nil
+    message = Message.new :text => nil, :title => "foo"
     message.should_not be_valid
   end
 
