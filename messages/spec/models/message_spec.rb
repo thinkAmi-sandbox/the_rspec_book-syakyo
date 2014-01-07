@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Message do
   it "is valid with valid attributes" do
-    Message.new.should be_valid
+    Message.new(:title => "foo").should be_valid
   end
 
   it "is not valid without a title" do
