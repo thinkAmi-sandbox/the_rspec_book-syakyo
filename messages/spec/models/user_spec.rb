@@ -20,12 +20,10 @@ describe User do
       end
 
       it "create a new message with the submitted attributes" do
-        zach = User.create!
-        david = User.create!
-        msg = zach.send_message(
+        msg = @zach.send_message(
           :title => "Book Update",
           :text => "Beta 11 includes great stuff!",
-          :recipient => david
+          :recipient => @david
         )
         msg.title.should == "Book Update"
         msg.text.should == "Beta 11 includes great stuff!"
