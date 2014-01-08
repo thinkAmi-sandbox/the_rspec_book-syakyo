@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe User do
   describe "#send_message" do
+    before(:each) do
+      @zach = User.create!
+      @david = User.create!
+    end
+
     context "when the user is under their subscription limit" do
       it "sends a message to another user" do
         zach = User.create!
