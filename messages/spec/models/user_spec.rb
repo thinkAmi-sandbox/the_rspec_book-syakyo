@@ -26,7 +26,16 @@ describe User do
         msg.text.should == "Beta 11 includes great stuff!"
       end
 
-      it "adds the message to the sender's send message"
+      it "adds the message to the sender's send message" do
+        zach = User.create!
+        david = User.create!
+        msg = zach.send_message(
+          :title => "Book Update",
+          :text => "Beta 11 includes great stuff!",
+          :recipient => david
+        )
+        zach.sent_messages.should == [msg]
+      end
     end
   end
 end
