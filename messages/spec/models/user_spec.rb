@@ -8,6 +8,11 @@ describe User do
     end
 
     context "when the user is under their subscription limit" do
+      before(:each) do
+        @zach.subscription = Subscription.new
+        @zach.subscription.stub(:can_send_message?).and_return true
+      end
+      
       it "sends a message to another user" do
         msg = @zach.send_message(
           :title => "Book Update",
