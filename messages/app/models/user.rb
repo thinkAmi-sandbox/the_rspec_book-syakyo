@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     :foreign_key => "recipient_id"
   has_many :sent_messages, :class_name => Message.name,
     :foreign_key => "sender_id"
+  belongs_to :subscription
 
   def send_message(message_attrs)
     sent_messages.create! message_attrs
