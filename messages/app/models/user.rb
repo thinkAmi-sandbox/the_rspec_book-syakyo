@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :received_message, :class_name => Message.name,
+  has_many :received_messages, :class_name => Message.name,
     :foreign_key => "recipient_id"
 
   def send_message(message_attrs)
