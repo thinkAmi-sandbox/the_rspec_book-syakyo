@@ -25,6 +25,8 @@ describe User do
         msg.title.should == "Book Update"
         msg.text.should == "Beta 11 includes great stuff!"
       end
+
+      it "adds the message to the sender's send message"
     end
   end
 end
